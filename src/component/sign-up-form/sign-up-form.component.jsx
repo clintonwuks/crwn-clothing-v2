@@ -8,6 +8,7 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
+
 const defaultformFields = {
   displayName: "",
   email: "",
