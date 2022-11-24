@@ -1,10 +1,20 @@
+.product-card-container {
+  .button-container {
+    min-width: min(165px, 75%);
+    width: auto;
+    height: 50px;
+    padding: 0 10px 40px 10px ;
+  }
+}
+
 .button-container {
   min-width: 165px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
+  //if you want to fix mobile responsiveness, remove line-height or reduce it with media query
   line-height: 50px;
-  padding: 0 35px 0 35px;
+  padding: 0 10px 40px 10px ;
   font-size: 15px;
   background-color: black;
   color: white;
@@ -41,6 +51,23 @@
       background-color: black;
       color: white;
       border: none;
+    }
+  }
+
+}
+@media (max-width: 800px) {
+  .product-card-container {
+    .button-container {
+      line-height: 20px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .product-card-container {
+
+    .button-container {
+      width: 75%;
     }
   }
 }
