@@ -4,7 +4,7 @@ import { CartDropdownContext } from "../../context/cart-drawer.context";
 
 import "./checkout-item.styles.scss";
 const CheckoutItem = ({ cartItem }) => {
-  const { imageUrl, name, quantity, price, id } = cartItem;
+  const { imageUrl, name, quantity, price } = cartItem;
   const { decreaseItemCount, removeItemFromCart, addItemToCart } =
     useContext(CartDropdownContext);
 
