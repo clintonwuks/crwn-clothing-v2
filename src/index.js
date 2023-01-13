@@ -5,18 +5,18 @@ import "./index.scss";
 import App from "./App";
 import { UserProvider } from "./context/user.context";
 import reportWebVitals from "./reportWebVitals";
-import { ProductProvider } from "./context/product.context";
+import { CategoriesProvider } from "./context/categories.context";
 import { CartDropdownProvider } from "./context/cart-drawer.context";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-        <ProductProvider>
+        <CategoriesProvider>
           <CartDropdownProvider>
             <App />
           </CartDropdownProvider>
-        </ProductProvider>
+        </CategoriesProvider>
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
