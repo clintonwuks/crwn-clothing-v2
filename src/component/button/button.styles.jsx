@@ -1,18 +1,11 @@
-.product-card-container {
-  .button-container {
-    min-width: min(165px, 75%);
-    width: auto;
-    height: 50px;
-    padding: 0 10px 40px 10px ;
-  }
-}
+import styled from "styled-components";
 
-.button-container {
-  min-width: 165px;
+export const BaseButton = styled.button`
+   min-width: 165px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
-  //if you want to fix mobile responsiveness, remove line-height or reduce it with media query
+  ${'' /* //if you want to fix mobile responsiveness, remove line-height or reduce it with media query */}
   line-height: 50px;
   padding: 0 10px 40px 10px ;
   font-size: 15px;
@@ -31,19 +24,20 @@
     color: black;
     border: 1px solid black;
   }
+`;
 
-  &.google-sign-in {
-    background-color: #4285f4;
+export const GoogleSignInButton = styled(BaseButton)`
+   background-color: #4285f4;
     color: white;
 
     &:hover {
       background-color: #357ae8;
       border: none;
     }
-  }
+`;
 
-  &.inverted {
-    background-color: white;
+export const InvertedButton = styled(BaseButton)`
+   background-color: white;
     color: black;
     border: 1px solid black;
 
@@ -51,23 +45,6 @@
       background-color: black;
       color: white;
       border: none;
-    }
-  }
 
-}
-@media (max-width: 800px) {
-  .product-card-container {
-    .button-container {
-      line-height: 20px;
-    }
-  }
-}
+`;
 
-@media (min-width: 600px) {
-  .product-card-container {
-
-    .button-container {
-      width: 75%;
-    }
-  }
-}

@@ -16,6 +16,7 @@ const Shop = () => {
   //     })}
   //   </div>
   // );
+  
   return(
     <Routes>
       <Route index element={<CategoriesPreview/>} />

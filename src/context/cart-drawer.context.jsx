@@ -75,7 +75,6 @@ export const CartDropdownProvider = ({ children }) => {
 
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
-    console.log(cartItems);
   };
 
   const increaseItemCount = (productToIncrease) => {
@@ -88,7 +87,6 @@ export const CartDropdownProvider = ({ children }) => {
 
   const removeItemFromCart = (productToRemove) => {
     setCartItems(removeCartItem(cartItems, productToRemove));
-    console.log(productToRemove);
   };
 
   useEffect(() => {
@@ -96,7 +94,6 @@ export const CartDropdownProvider = ({ children }) => {
       return accumulator + cartItem.quantity * cartItem.price;
     }, 0);
     setCartTotal(cartTotal);
-    console.log(cartTotal)
   }, [cartItems]);
 
   useEffect(() => {

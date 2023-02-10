@@ -2,7 +2,16 @@ import { useContext } from "react";
 
 import { CartDropdownContext } from "../../context/cart-drawer.context";
 
-import "./checkout-item.styles.scss";
+import {
+  CheckoutItemContainer,
+  ImageContainer,
+  TdAsNameOrPrice,
+  Img,
+  Arrow,
+  Quantity,
+  RemoveButton,
+  Value,
+} from "./checkout-item.styles";
 const CheckoutItem = ({ cartItem }) => {
   const { imageUrl, name, quantity, price } = cartItem;
   const { decreaseItemCount, removeItemFromCart, addItemToCart } =
@@ -18,37 +27,34 @@ const CheckoutItem = ({ cartItem }) => {
     removeItemFromCart(cartItem);
   };
   return (
-    <tr className="checkout-item-container">
-      <td className="image-container">
-        <img src={imageUrl} alt={`${name}`} />
-      </td>
-      <td className="name">
+    <CheckoutItemContainer>
+      <ImageContainer>
+        <Img src={imageUrl} alt={`${name}`} />
+      </ImageContainer>
+      <TdAsNameOrPrice>
         <h3>{name}</h3>
-      </td>
-      <td className="quantity">
+      </TdAsNameOrPrice>
+      <Quantity>
         <p>
-          <span className="arrow" onClick={decrementHandler}>
+          <Arrow onClick={decrementHandler}>
             {" "}
             &#10094;{" "}
-          </span>
-          <span className="value" >
-            {" "}
-            {quantity}{" "}
-          </span>
+          </Arrow>
+          <Value> {quantity} </Value>
 
-          <span className="arrow" onClick={incrementHandler}>
+          <Arrow  onClick={incrementHandler}>
             {" "}
             &#10095;{" "}
-          </span>
+          </Arrow>
         </p>
-      </td>
-      <td className="price">
+      </Quantity>
+      <TdAsNameOrPrice >
         <p>{quantity * price}</p>
-      </td>
-      <td className="remove-button">
+      </TdAsNameOrPrice>
+      <RemoveButton>
         <p onClick={removeHandler}>&#10005;</p>
-      </td>
-    </tr>
+      </RemoveButton>
+    </CheckoutItemContainer>
   );
 };
 export default CheckoutItem;
