@@ -76,11 +76,12 @@ const SignInForm = () => {
             SIGN IN{" "}
           </Button>
           <Button
-            type="button"
+            // type="button"
             buttonType={BUTTON_TYPE_CLASSES.google}
             onClick={logGoogleUser}
           >
-            GOOGLE SIGNIN
+          {" "}
+            GOOGLE SIGNIN {" "}
           </Button>
         </ButtonsContainer>
       </form>
