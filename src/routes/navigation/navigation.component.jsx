@@ -1,5 +1,5 @@
-import { Fragment, useContext} from "react";
-import { Outlet} from "react-router-dom";
+import { Fragment, useContext, useEffect, useCallback } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 
 import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 
@@ -19,12 +19,12 @@ const Navigation = () => {
   const signOutHandler = async () => {
     await signOutUser();
   };
-  // const navigate = useNavigate();
-  // const navigate1 = useCallback(() => currentUser ? navigate("/") : navigate("/auth"), [currentUser]);
+  const navigate = useNavigate();
+  const navigate1 = useCallback(() => currentUser ? navigate("/") : navigate("/auth"), [currentUser]);
 
-  // useEffect(() =>{
-  //   navigate1();
-  // },[navigate1,])
+  useEffect(() =>{
+    navigate1();
+  },[navigate1,])
 
   return (
     <Fragment>
