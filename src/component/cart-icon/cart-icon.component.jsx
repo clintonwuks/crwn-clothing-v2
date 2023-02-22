@@ -9,7 +9,7 @@ import {CartIconContainer, ItemCount} from "./cart-icon.styles";
 const CartIcon = () => {
   const { dropdownState, setDropdownState, cartItemsCount } = useContext(CartDropdownContext);
   const toggleIsCartOpen = () => setDropdownState(!dropdownState);
-  console.log(dropdownState);
+  // console.log(dropdownState);
 
   return (
     <CartIconContainer onClick={toggleIsCartOpen}>

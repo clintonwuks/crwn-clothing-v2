@@ -20,7 +20,7 @@ const Navigation = () => {
     await signOutUser();
   };
   const navigate = useNavigate();
-  const navigate1 = useCallback(() => currentUser ? navigate("/") : navigate("/auth"), [currentUser]);
+  const navigate1 = useCallback(() => currentUser ? navigate("/") : navigate("/auth"), [currentUser, navigate]);
 
   useEffect(() =>{
     navigate1();
